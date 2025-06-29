@@ -1,6 +1,7 @@
 'use client'
 
 import { Button } from "@/components/ui/button"
+import { signOut } from "next-auth/react"
 
 export default function DashboardPage() {
     return (
@@ -14,7 +15,7 @@ export default function DashboardPage() {
                 <div className="container px-5 py-24 mx-auto">
                     <div className="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center">
                         <p className="leading-relaxed text-2xl ">ログイン成功しました。</p>
-                        <Button variant="outline">Sign Out</Button>
+                        <Button variant="outline" onClick={() => signOut({ callbackUrl: '/login' })}>Sign Out</Button>
                     </div>
                 </div>
             </section>
