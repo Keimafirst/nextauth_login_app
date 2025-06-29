@@ -39,9 +39,30 @@ export const authOptions: NextAuthOptions = {
       },
     }),
   ],
+  callbacks: {
+    // トークン作成・更新
+    async jwt({ token, user }) {
+      if (user) {
+        token.id = user.id;
+        token.name = user.name;
+      }
+      return token;
+    },
+    // トークンをセッションに展開
+    async session({ session, token }) {
+      if (session.user) {
+        session.user.id = token.id as string;
+        session.user.name = token.name as string;
+      }
+      return session;
+    },
+  },
   pages: { signIn: "/login" },
-  session: { strategy: "jwt" },
-  jwt: {},
+  session: {
+    strategy: "jwt",
+    maxAge: 60 * 30, // 30min
+  },
+  jwt: { maxAge: 60 * 30 },
   secret: process.env.NEXTAUTH_SECRET,
 };
 const handler = NextAuth(authOptions);

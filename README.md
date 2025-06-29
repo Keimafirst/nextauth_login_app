@@ -1,8 +1,10 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+これは、create-next-app で初期化された Next.js プロジェクトです。
 
-## Getting Started
+## はじめに
 
-First, run the development server:
+練習用に作成した簡易的なログイン機能です。
+
+まず、開発サーバーを起動してください。
 
 ```bash
 npm run dev
@@ -14,23 +16,30 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+結果を見るにはブラウザ [http://localhost:3000](http://localhost:3000)で開いてください。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 機能概要
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- ログイン画面・ユーザー登録画面・ログイン成功画面
+- セッション管理
+- middleware でのルーティング（ページ単位）のアクセス制御
 
-## Learn More
+<br>
 
-To learn more about Next.js, take a look at the following resources:
+## 使用技術
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Category | Technology Stack           |
+| -------- | -------------------------- |
+| Frontend | TypeScript, Next.js        |
+| Backend  | TypeScript, NestJS, Prisma |
+| Database | MySQL                      |
+| Design   | Shadcn UI, Tailwind CSS    |
+| etc.     | ESLint, Next-auth.js       |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+<br>
 
-## Deploy on Vercel
+## 参考 URL
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [画面](https://ui.shadcn.com/docs/components/card)
+- [middleware](https://nextjs.org/docs/app/api-reference/file-conventions/middleware)
+- [認証操作](https://next-auth.js.org/getting-started/typescript)
